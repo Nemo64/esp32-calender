@@ -1,0 +1,33 @@
+#pragma once
+
+// enter your wifi credentials
+#define WIFI_HOSTNAME "muellkallener"
+#define WIFI_SSID "ssid"
+#define WIFI_PASSWORD "password"
+
+// get the ics url using the interface at https://www.awsh.de/service/abfuhrtermine/
+// you'll have to do additional work to support https but that api does support http
+#define CALENDER_URL "http://www.awsh.de/api_v2/collection_dates/"
+#define CALENDER_SIZE 8
+
+#define GMT_OFFSET 3600
+#define DAYLIGHT_OFFSET 3600
+#define NTP_SERVER "pool.ntp.org"
+
+#ifdef ARDUINO_D1_MINI32
+#define PIN_LED 2
+#define PIN_CS 5
+#define PIN_DC 26
+#define PIN_RST 33
+#define PIN_BUSY 35
+#define PIN_VOLTAGE 36
+#define VOLTAGE_ATTEN ADC_0db
+#define VOLTAGE_MOD 1125 / 100
+#endif
+
+#ifdef ARDUINO_ESP32_DEV
+#define PIN_CS 5
+#define PIN_DC 2
+#define PIN_RST 13
+#define PIN_BUSY 4
+#endif
